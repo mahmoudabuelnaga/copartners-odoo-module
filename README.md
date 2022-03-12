@@ -1,0 +1,1 @@
+# copartners-odoo-module

@@ -1,0 +1,32 @@
+<odoo>
+    <record id="action_copartners_report" model="ir.actions.report">
+       <field name="name">Copartners</field>
+       <field name="model">copartners.copartners</field>
+       <field name="report_type">qweb-pdf</field>
+       <field name="report_name">copartners.report_copartners_details</field>
+       <field name="report_file">copartners.report_copartners_details</field>
+       <field name="print_report_name">'copartners - %s' % (object.name)</field>
+        <field name="binding_type">report</field>
+    </record>
+    <template id="report_copartners_details">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Report title</h2>
+                        <p>This copartner name is: <span t-field="o.name"/></p>
+                        <p>This copartner gender is: <span t-field="o.gender"/></p>
+                        <p>This copartner country is: <span t-field="o.country"/></p>
+                        <p>This copartner joining date is: <span t-field="o.joining_date"/></p>
+                        <p>This copartner tags is: <span t-field="o.tags"/></p>
+                        <p>This copartner customers is: <span t-field="o.customers"/></p>
+                        <p>This copartner company is: <span t-field="o.company"/></p>
+                        <p>This copartner notes is: <span t-field="o.notes"/></p>
+                        <p>This copartner comments is: <span t-field="o.comments"/></p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
